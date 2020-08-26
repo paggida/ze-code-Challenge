@@ -1,0 +1,23 @@
+{
+  "name": "ze_code_prj",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon",
+    "start-docker": "docker-compose up",
+    "test-linux": "export NODE_ENV=test jest",
+    "test-windows": "set NODE_ENV=test && jest"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.0",
+    "youch": "^2.0.10"
+  }
+}
