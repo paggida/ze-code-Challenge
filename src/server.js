@@ -34,8 +34,8 @@ class App {
   }
   routes()
   {
-    this.express.use(routes);
-    this.express.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    this.express.use('/api/v1', routes);
+    this.express.use('/api/v1/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
   exception()
   {
