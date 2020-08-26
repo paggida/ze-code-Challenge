@@ -1,0 +1,152 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0",
+    "title": "Zé Delivery Challenge"
+  },
+  "host": "localhost:3030",
+  "tags": [
+    { "name": "Partner", "description": "Features to handle de partner data." }
+  ],
+  "schemes": ["http"],
+  "paths": {
+    "/partner/{partnerCode}": {
+      "get": {
+        "tags": ["Partner"],
+        "summary": "Get data about a specific partner",
+        "description": "",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "partnerCode",
+            "in": "path",
+            "description": "Partner identification code",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Partner"
+            }
+          },
+          "404": {
+            "description": "Action canceled! Partner not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/partner/nearest/{longitude}/{latitude}": {
+      "get": {
+        "tags": ["Partner"],
+        "summary": "Search the nearest partner which the coverage area includes the specific location",
+        "description": "",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "longitude",
+            "in": "path",
+            "description": "Location longitude",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "latitude",
+            "in": "path",
+            "description": "Location latitude",
+            "required": true,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Partner"
+            }
+          },
+          "404": {
+            "description": "Action canceled! No partner found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Partner": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tradingName": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "document": { "type": "string" },
+        "coverageArea": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string" },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "$ref": "#/definitions/Coordinates"
+                }
+              }
+            }
+          }
+
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string" },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                  "type": "object",
+                  "$ref": "#/definitions/Coordinates"
+              }
+            }
+          }
+        },
+        "createdAt": { "type": "string", "format":"date-time" }
+      }
+    },
+    "Coordinates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "longitude": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "latitude": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

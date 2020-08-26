@@ -35,8 +35,7 @@ class App {
   routes()
   {
     this.express.use(routes);
-    //TBD
-    //this.express.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    this.express.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
   exception()
   {
