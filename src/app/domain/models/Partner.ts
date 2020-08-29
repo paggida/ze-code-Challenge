@@ -1,12 +1,10 @@
-import geoJsonTypeEnum from '../enums/PartnerEnum'
-
 export interface IGeoJSONPoint {
-	type: geoJsonTypeEnum.Point;
+	type: String;
 	coordinates: number[];
 }
 
 export interface IGeoJSONMultiPolygon {
-	type: geoJsonTypeEnum.MultiPolygon;
+	type: String;
 	coordinates: number[][][][];
 }
 
@@ -17,5 +15,5 @@ export interface IPartnerModel {
   document: String;
   coverageArea: IGeoJSONMultiPolygon;
   address: IGeoJSONPoint;
-  createdAt: Date;
+  createdAt?: Date;
 }
