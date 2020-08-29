@@ -4,6 +4,7 @@
   "main": "build/src/index.js",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "start-docker": "docker-compose up",
     "start": "nodemon",
     "test": "jest"

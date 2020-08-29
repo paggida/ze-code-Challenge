@@ -8,9 +8,7 @@ COPY package*.json .
 
 RUN ["yarn"]
 
-COPY . .
-
-RUN ["yarn", "tsc"]
+COPY /build .
 
 EXPOSE 3000
 
