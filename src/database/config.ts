@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const user             = '';
 const psw              = '';
-const host             = 'db_mongo_ze';
+const host             = 'localhost';//'db_mongo_ze';
 const port             = '27017';
 const db               = 'ZeDB';
 
