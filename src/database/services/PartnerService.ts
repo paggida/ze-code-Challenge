@@ -2,7 +2,7 @@ import Partner from '../schemas/PartnerSchema';
 import { IPartnerModel } from '../../app/domain/models/Partner';
 import { IPartnerMethods } from '../../app/domain/contracts/Partner';
 
-class PartnerDB implements IPartnerMethods {
+class PartnerDBService implements IPartnerMethods {
   async setNewPartner(partnerObj: IPartnerModel)
   {
     const dbResponse = await Partner.create(partnerObj);
@@ -19,4 +19,4 @@ class PartnerDB implements IPartnerMethods {
   }
 }
 
-export default new PartnerDB();
+export default new PartnerDBService();
