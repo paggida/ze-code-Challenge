@@ -7,3 +7,6 @@ Geolocation api to search for business partners
 - Docker to infrastructure (https://www.docker.com/).
 - Typescript to code (https://www.typescriptlang.org/).
 - Jest to test (https://jestjs.io/en/).
+
+## Prerequisite
+(To be defined)

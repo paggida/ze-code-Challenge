@@ -1,12 +1,16 @@
 FROM node:10
 
-WORKDIR /usr/src
+ENV NODE_ENV test
 
-COPY package*.json ./
+WORKDIR /usr/src/app
 
-RUN yarn
+COPY package*.json .
 
-COPY /buid .
+RUN ["yarn"]
+
+COPY . .
+
+RUN ["yarn", "tsc"]
 
 EXPOSE 3000
 

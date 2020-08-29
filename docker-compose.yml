@@ -6,7 +6,7 @@ services:
     build: .
     ports:
       - '3000:3000'
-    volumes: ['./:/usr/src']
+    volumes: ['./:/usr/src/app']
     links:
       - mongo
   mongo:

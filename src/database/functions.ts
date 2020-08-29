@@ -1,3 +1,5 @@
+//TBD
+/*
 const partnerContract = require("../app/domain/contracts/Partner");
 const model = require("../app/domain/models");
 
@@ -18,4 +20,4 @@ partnerContract.deletePartnerById = async partnerCode =>
   await model.Partner.findOneAndDelete({ id: partnerCode });
 }
 
-export default partnerContract;
+export default partnerContract;*/
