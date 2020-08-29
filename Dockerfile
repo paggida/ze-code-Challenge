@@ -1,12 +1,12 @@
 FROM node:10
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
 COPY package*.json ./
 
 RUN yarn
 
-COPY . .
+COPY /buid .
 
 EXPOSE 3000
 
