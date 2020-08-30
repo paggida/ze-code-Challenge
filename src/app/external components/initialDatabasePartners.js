@@ -1,6 +1,68 @@
 const initialPartners = [
+  {
+    id: 1,
+    tradingName: 'Adega da Cerveja - Pinheiros',
+    ownerName: 'Zé da Silva',
+    document: '1432132123891/0001',
+    coverageArea: {
+      type: 'MultiPolygon',
+      coordinates: [
+        [
+          [
+            [
+              30,
+              20
+            ],
+            [
+              45,
+              40
+            ],
+            [
+              10,
+              40
+            ],
+            [
+              30,
+              20
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              15,
+              5
+            ],
+            [
+              40,
+              10
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              15,
+              5
+            ]
+          ]
+        ]
+      ]
+    },
+    address: {
+      type: 'Point',
+      coordinates: [
+        -46.57421,
+        -21.785741
+      ]
+    }
+  },
 	{
-	  id: '1',
+	  id: '2',
 	  tradingName: 'Adega Osasco',
 	  ownerName: 'Ze da Ambev',
 	  document: '02.453.716/000170',
@@ -134,7 +196,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '2',
+	  id: '3',
 	  tradingName: 'Adega Pinheiros',
 	  ownerName: 'Ze da Silva',
 	  document: '04.433.714/0001-44',
@@ -284,7 +346,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '3',
+	  id: '4',
 	  tradingName: 'Adega Sao Paulo',
 	  ownerName: 'Pedro Silva',
 	  document: '04666182390',
@@ -430,7 +492,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '4',
+	  id: '5',
 	  tradingName: 'Bar do Ze',
 	  ownerName: 'Joao Silva',
 	  document: '04698149428',
@@ -568,7 +630,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '5',
+	  id: '6',
 	  tradingName: 'Bar Legal',
 	  ownerName: 'Fernando Silva',
 	  document: '05202839000126',
@@ -634,7 +696,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '6',
+	  id: '7',
 	  tradingName: 'Bar Nem Tanto',
 	  ownerName: 'Lucas Satto',
 	  document: '06.269.410/0001-19',
@@ -820,7 +882,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '7',
+	  id: '8',
 	  tradingName: 'Mercado Pinheiros',
 	  ownerName: 'Luiz Santo',
 	  document: '06004905000116',
@@ -922,7 +984,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '8',
+	  id: '9',
 	  tradingName: 'Adega Ambev',
 	  ownerName: 'Felipe Rudenberg',
 	  document: '07.691.399/0001-43',
@@ -1084,7 +1146,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '9',
+	  id: '10',
 	  tradingName: 'Ze da Ambev',
 	  ownerName: 'Ze Legal',
 	  document: '07.710.066/0001-14',
@@ -1274,7 +1336,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '10',
+	  id: '11',
 	  tradingName: 'Emporio legal',
 	  ownerName: 'Leonardo Cruz',
 	  document: '081.914.699-44',
@@ -1400,7 +1462,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '11',
+	  id: '12',
 	  tradingName: 'Emporio Pinheiros',
 	  ownerName: 'Rai da Silva',
 	  document: '09.201.319/0001-50',
@@ -1474,7 +1536,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '12',
+	  id: '13',
 	  tradingName: 'Adega Emporio',
 	  ownerName: 'Ronaldinho gaucho',
 	  document: '09.444.848/0001-84',
@@ -1576,7 +1638,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '13',
+	  id: '14',
 	  tradingName: 'Adega do Joao',
 	  ownerName: 'Messi Pele',
 	  document: '10.144.318/0001-08',
@@ -1722,7 +1784,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '14',
+	  id: '15',
 	  tradingName: 'Joao do Emporio',
 	  ownerName: 'Pele Maradona',
 	  document: '10.899.700/0001-13',
@@ -1836,7 +1898,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '15',
+	  id: '16',
 	  tradingName: 'Emporio da Cerveja',
 	  ownerName: 'Joao Maradona',
 	  document: '11.863.940/0001-20',
@@ -1954,7 +2016,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '16',
+	  id: '17',
 	  tradingName: 'Ze Delivery',
 	  ownerName: 'Pele da Silva',
 	  document: '13.082.397/000150',
@@ -2044,7 +2106,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '17',
+	  id: '18',
 	  tradingName: 'Behoppy',
 	  ownerName: 'Daniboy',
 	  document: '13210.058/0001-01',
@@ -2174,7 +2236,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '18',
+	  id: '19',
 	  tradingName: 'SOS Cerveja',
 	  ownerName: 'Daniel Henrique',
 	  document: '15.127.213/0001-56',
@@ -2636,7 +2698,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '19',
+	  id: '20',
 	  tradingName: 'Noiz Cerveja',
 	  ownerName: 'Eduardo Pedroso',
 	  document: '15.187.572/0001-07',
@@ -2706,7 +2768,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '20',
+	  id: '21',
 	  tradingName: 'Ze Repoe',
 	  ownerName: 'Eduardo Piroco',
 	  document: '15.562.297/0001-56',
@@ -2892,7 +2954,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '21',
+	  id: '22',
 	  tradingName: 'Adega Osasco',
 	  ownerName: 'Pele Maradona',
 	  document: '16.572.053/0001-17',
@@ -3186,7 +3248,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '22',
+	  id: '23',
 	  tradingName: 'Adega Pinheiros',
 	  ownerName: 'Joao Maradona',
 	  document: '18.293.334/0001-66',
@@ -3288,7 +3350,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '23',
+	  id: '24',
 	  tradingName: 'Adega Sao Paulo',
 	  ownerName: 'Pele da Silva',
 	  document: '19.024.189/0001-80',
@@ -3434,7 +3496,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '24',
+	  id: '25',
 	  tradingName: 'Bar do Ze',
 	  ownerName: 'Daniboy',
 	  document: '19.280.240/0001-15',
@@ -3564,7 +3626,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '25',
+	  id: '26',
 	  tradingName: 'Bar Legal',
 	  ownerName: 'Daniel Henrique',
 	  document: '20.053.623/0001-30',
@@ -3750,7 +3812,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '26',
+	  id: '27',
 	  tradingName: 'Bar Nem Tanto',
 	  ownerName: 'Daniboy',
 	  document: '20.194.088/0001-37',
@@ -3964,7 +4026,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '27',
+	  id: '28',
 	  tradingName: 'Mercado Pinheiros',
 	  ownerName: 'Daniel Henrique',
 	  document: '21.579.095/0001-10',
@@ -4070,7 +4132,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '28',
+	  id: '29',
 	  tradingName: 'Adega Ambev',
 	  ownerName: 'Eduardo Pedroso',
 	  document: '21.658.641/0001-08',
@@ -4176,7 +4238,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '29',
+	  id: '30',
 	  tradingName: 'Ze da Ambev',
 	  ownerName: 'Eduardo Piroco',
 	  document: '22.15.127.213/0001-56.752/0001-90',
@@ -4282,7 +4344,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '30',
+	  id: '31',
 	  tradingName: 'Emporio legal',
 	  ownerName: 'Ze da Ambev',
 	  document: '22512343000178',
@@ -4340,7 +4402,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '31',
+	  id: '32',
 	  tradingName: 'Emporio Pinheiros',
 	  ownerName: 'Ze da Ambev',
 	  document: '22745914/0001-14',
@@ -4418,7 +4480,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '32',
+	  id: '33',
 	  tradingName: 'Adega Emporio',
 	  ownerName: 'Ze da Silva',
 	  document: '23.254.882/0001-17',
@@ -4516,7 +4578,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '33',
+	  id: '34',
 	  tradingName: 'Adega do Joao',
 	  ownerName: 'Pedro Silva',
 	  document: '23.459.215/0001-70',
@@ -4754,7 +4816,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '34',
+	  id: '35',
 	  tradingName: 'Joao do Emporio',
 	  ownerName: 'Joao Silva',
 	  document: '23.680.471/0001-93',
@@ -4852,7 +4914,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '35',
+	  id: '36',
 	  tradingName: 'Emporio da Cerveja',
 	  ownerName: 'Fernando Silva',
 	  document: '23.934.782/0001-31',
@@ -4958,7 +5020,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '36',
+	  id: '37',
 	  tradingName: 'Ze Delivery',
 	  ownerName: 'Lucas Satto',
 	  document: '23840372000121',
@@ -5064,7 +5126,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '37',
+	  id: '38',
 	  tradingName: 'Behoppy',
 	  ownerName: 'Luiz Santo',
 	  document: '24.522.169/0001-70',
@@ -5114,7 +5176,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '38',
+	  id: '39',
 	  tradingName: 'SOS Cerveja',
 	  ownerName: 'Felipe Rudenberg',
 	  document: '24302190/0001-60',
@@ -5196,7 +5258,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '39',
+	  id: '40',
 	  tradingName: 'Noiz Cerveja',
 	  ownerName: 'Ze Legal',
 	  document: '25.039.008/0001-92',
@@ -5370,7 +5432,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '40',
+	  id: '41',
 	  tradingName: 'Ze Repoe',
 	  ownerName: 'Leonardo Cruz',
 	  document: '25.175.276/0001-31',
@@ -5520,7 +5582,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '41',
+	  id: '42',
 	  tradingName: 'Adega Sao Paulo',
 	  ownerName: 'Rai da Silva',
 	  document: '26.091.851/0001-80',
@@ -5614,7 +5676,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '42',
+	  id: '43',
 	  tradingName: 'Bar do Ze',
 	  ownerName: 'Ronaldinho gaucho',
 	  document: '26.617.478/0001-59',
@@ -5700,7 +5762,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '43',
+	  id: '44',
 	  tradingName: 'Bar Legal',
 	  ownerName: 'Messi Pele',
 	  document: '26.810.612/0001-33',
@@ -5898,7 +5960,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '44',
+	  id: '45',
 	  tradingName: 'Bar Nem Tanto',
 	  ownerName: 'Pele Maradona',
 	  document: '27494912000113',
@@ -5960,7 +6022,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '45',
+	  id: '46',
 	  tradingName: 'Mercado Pinheiros',
 	  ownerName: 'Joao Maradona',
 	  document: '27865490000145',
@@ -6058,7 +6120,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '46',
+	  id: '47',
 	  tradingName: 'Adega Ambev',
 	  ownerName: 'Pele da Silva',
 	  document: '36211693850',
@@ -6296,7 +6358,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '47',
+	  id: '48',
 	  tradingName: 'Ze da Ambev',
 	  ownerName: 'Daniboy',
 	  document: '54321515000112',
@@ -6558,7 +6620,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '48',
+	  id: '49',
 	  tradingName: 'Bar do Ze',
 	  ownerName: 'Daniel Henrique',
 	  document: '62638527000101',
@@ -6784,7 +6846,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '49',
+	  id: '50',
 	  tradingName: 'Bar Legal',
 	  ownerName: 'Eduardo Pedroso',
 	  document: '73.068.991/0001-18',
@@ -6918,7 +6980,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '50',
+	  id: '51',
 	  tradingName: 'Adega Emporio',
 	  ownerName: 'Eduardo Piroco',
 	  document: '82.666.231/0001-01',
@@ -6960,7 +7022,7 @@ const initialPartners = [
 	  }
 	},
 	{
-	  id: '51',
+	  id: '52',
 	  tradingName: 'Adega do Joao',
 	  ownerName: 'Pele Maradona',
 	  document: '960361.506-44',
