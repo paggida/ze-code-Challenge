@@ -48,6 +48,12 @@ describe('Validation of the flow to add a new partner.', () => {
     expect(newPartnerCode.isSuccess).toBeFalsy();
     expect(newPartnerCode.message.indexOf("duplicate key")).toBeGreaterThanOrEqual(0);
   });
+
+  it('Should not be able to add a invalid new partner.', async () => {
+    const newPartnerCode = await partnerService.setNewPartner({});
+
+    expect(newPartnerCode.isSuccess).toBeFalsy();
+  });
 });
 
 describe('Validation of the flow to find a specific partner.', () => {

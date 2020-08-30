@@ -5,8 +5,8 @@ const PartnerDBService = Object.assign({}, IPartnerMethods);
 
 PartnerDBService.setNewPartner = async (partnerObj)=>{
   try{
-    const dbResponse = await Partner.create(partnerObj);
-    return { isSuccess:true, id: dbResponse.id };
+      const dbResponse = await Partner.create(partnerObj);
+      return { isSuccess:true, id: dbResponse.id };
   }catch(e){
     return getErrorObj(e);
   }
