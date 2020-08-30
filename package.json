@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon",
     "start-docker": "docker-compose up",
-    "test": "jest"
+    "test": "jest",
+    "test-docker": "docker exec -it ze_code_prj yarn test"
   },
   "devDependencies": {
     "jest": "^26.4.2",

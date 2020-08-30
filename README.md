@@ -41,5 +41,12 @@ With the application running, execute the command below:
 
     docker exec -it ze_code_prj yarn test
 
+If the terminal is already pointing to the project's root folder, you can use the shorter command below (It depends on which package manager you chose):
+
+    yarn test-docker
+or
+
+    npm run test-docker
+
 ## 📦 Sending to production environment
 If you already having an account in a cloud service (AWS, Digitalocean, etc), you can easily make the application available on it through a Docker tool called Docker-Machine (https://docs.docker.com/machine/overview/)
