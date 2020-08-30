@@ -5,7 +5,7 @@ module.exports = {
     return {
       user: '',
       psw: '',
-      host: 'localhost', //'db_mongo_ze'
+      host: 'db_mongo_ze',
       port: '27017',
       db: 'ZeDB'
     }
@@ -17,7 +17,7 @@ module.exports = {
   },
   isConnected()
   {
-    return mongoose.connection.readyState = 1 || mongoose.connection.readyState = 2
+    return mongoose.connection.readyState === 1 || mongoose.connection.readyState === 2
   },
   async createConnection(dBUriObj)
   {
