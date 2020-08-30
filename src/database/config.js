@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const initialDatabasePartners = require('../app/external components/initialDatabasePartners');
+const partnerService = require('./services/PartnerService');
 
 module.exports = {
   getDBUriObj(){
@@ -22,6 +24,7 @@ module.exports = {
   async createConnection(dBUriObj)
   {
     await mongoose.connect(this.getUri(dBUriObj), {
+      useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false
@@ -34,6 +37,13 @@ module.exports = {
   async initializeDatabases(dBUriObj)
   {
     await this.createConnection(dBUriObj);
-    //TBD
+
+    populateDatabases();
+  }
+};
+
+function populateDatabases(){
+  for(partner of initialDatabasePartners){
+    partnerService.setNewPartner(partner);
   }
 }
