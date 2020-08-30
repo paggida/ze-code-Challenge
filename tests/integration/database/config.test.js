@@ -1,6 +1,6 @@
 const dbConfig = require('../../../src/database/config');
 const partnerService = require('../../../src/database/services/PartnerService');
-const initialDatabasePartners = require('../../../src/app/external components/initialDatabasePartners')/
+const initialDatabasePartners = require('../../../src/app/external components/initialDatabasePartners');
 
 describe('Validation of the initial records in the database.', () => {
   beforeAll(async () => {
