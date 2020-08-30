@@ -1,4 +1,4 @@
-import PartnerService from '../../../../src/database/services/PartnerService';
+const PartnerService = require('../../../../src/database/services/PartnerService');
 
 const testPartner = {
   id: '3b241101-e2bb-4255-8caf-4136c566a962',

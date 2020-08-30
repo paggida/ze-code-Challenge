@@ -1,7 +1,7 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
-export default {
+module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -69,7 +69,7 @@ export default {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions : ['ts','tsx','js'],
+  //moduleFileExtensions : ['ts','tsx','js'],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
@@ -134,7 +134,7 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['**/tests/*.spec.+(ts|tsx|js)', '**/*.test.+(ts|tsx|js)'],
+  testMatch: ['**/tests/**/*.test.js']
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -157,9 +157,7 @@ export default {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-    transform:{
-      '^.+\\.(ts|tsx)$':'ts-jest',
-    }
+  //transform:{'^.+\\.(ts|tsx)$':'ts-jest'}
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
