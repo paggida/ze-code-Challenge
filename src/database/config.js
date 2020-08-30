@@ -1,11 +1,12 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+
 const user             = '';
 const psw              = '';
-const host             = 'localhost';//'db_mongo_ze';
+const host             = 'db_mongo_ze';
 const port             = '27017';
 const db               = 'ZeDB';
 
-export default {
+module.exports = {
   getUri()
   {
     const login = (user && psw)?`${user}:${psw}@`:'';

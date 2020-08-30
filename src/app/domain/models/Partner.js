@@ -18,4 +18,4 @@ const IPartnerModel = {
   createdAt: ''
 }
 
-export default IPartnerModel
+module.exports = IPartnerModel

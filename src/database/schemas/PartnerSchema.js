@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose';
+const mongoose = require('mongoose')
 
-const PartnerSchema = new Schema({
+const PartnerSchema = new mongoose.Schema({
   id: {
     type: String,
     required: true,
@@ -51,4 +51,4 @@ const PartnerSchema = new Schema({
   }
 })
 
-export default mongoose.model('Partner', PartnerSchema)
+module.exports = mongoose.model('Partner', PartnerSchema)

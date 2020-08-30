@@ -1,5 +1,5 @@
-import Partner from '../schemas/PartnerSchema';
-import IPartnerMethods from '../../app/domain/contracts/Partner';
+const Partner = require('../schemas/PartnerSchema');
+const IPartnerMethods = require('../../app/domain/contracts/Partner');
 
 const PartnerDBService = Object.assign({}, IPartnerMethods);
 
@@ -21,4 +21,4 @@ PartnerDBService.deletePartnerById = async (partnerCode)=>{
   await Partner.findOneAndDelete({ id: partnerCode });
 }
 
-export default PartnerDBService;
+module.exports = PartnerDBService;

@@ -1,10 +1,10 @@
-import express from 'express';
-import cors from 'cors';
-import youch from 'youch';
-import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './app/services/swagger.json';
-import dbConfig from './database/config';
-import routes from './routes';
+const express = require('express');
+const cors = require('cors');
+const youch = require('youch');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./app/services/swagger.json');
+const dbConfig = require('./database/config');
+const routes = require('./routes');
 
 class App {
   constructor()
@@ -53,4 +53,4 @@ class App {
   }
 }
 
-export default new App().express;
+module.exports = new App().express;

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   async Show(req, res) {
     const { partnerCode } = req.params;
 

@@ -5,4 +5,4 @@ const IPartnerMethods = {
   deletePartnerById: partnerCode=>{},
 }
 
-export default IPartnerMethods
+module.exports = IPartnerMethods
