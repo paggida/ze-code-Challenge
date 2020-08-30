@@ -1,17 +1,15 @@
 import express from 'express';
-import {Request, Response, NextFunction} from 'express';
 import cors from 'cors';
+import youch from 'youch';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './app/services/swagger.json';
 import dbConfig from './database/config';
 import routes from './routes';
 
 class App {
-  App: express.Application;
-
   constructor()
   {
-    this.App = express();
+    this.express = express();
 
     this.database();
     this.middlewares();
@@ -26,24 +24,27 @@ class App {
   }
   middlewares()
   {
-    this.App.use(express.json());
-    this.App.use(cors());
+    this.express.use(express.json());
+    this.express.use(cors());
   }
   security()
   {
-    this.App.disable('x-powered-by');
-    this.App.disable('etag');
+    this.express.disable('x-powered-by');
+    this.express.disable('etag');
   }
   routes()
   {
-    this.App.use('/api/v1', routes);
-    this.App.use('/api/v1/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    this.express.use('/api/v1', routes);
+    this.express.use('/api/v1/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
   exception()
   {
-    this.App.use(async (err: Error , req:Request, res:Response, next:NextFunction) => {
+    /* In production returns standard error, in other environments
+       returns errors treated in JSON format.*/
+    this.express.use(async (err , req, res, next) => {
       if (process.env.NODE_ENV !== 'production') {
-        return res.send(err);
+        const errYouch = new youch(err, req);
+        return res.json(await errYouch.toJSON());
       }
       return res.status(500).json({
         message: 'Internal server error, please try again later'
@@ -52,4 +53,4 @@ class App {
   }
 }
 
-export default new App().App;
+export default new App().express;

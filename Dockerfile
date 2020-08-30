@@ -8,7 +8,7 @@ COPY package*.json .
 
 RUN ["yarn"]
 
-COPY /build .
+COPY . .
 
 EXPOSE 3000
 

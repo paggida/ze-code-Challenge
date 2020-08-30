@@ -1,12 +1,10 @@
-import {Request, Response} from 'express';
-
 export default {
-  async Show(req:Request, res:Response) {
+  async Show(req, res) {
     const { partnerCode } = req.params;
 
     return res.status(200).json({ id: partnerCode });
   },
-  async Search(req:Request, res:Response) {
+  async Search(req, res) {
     const { longitude, latitude } = req.params;
 
     return res.status(200).json({ address : { type:'Point', coordinates:[longitude, latitude] } });
