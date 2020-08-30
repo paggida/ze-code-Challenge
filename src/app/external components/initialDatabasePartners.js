@@ -1,4 +1,4 @@
-module.exports = [
+const initialPartners = [
 	{
 	  id: '1',
 	  tradingName: 'Adega Osasco',
@@ -7073,5 +7073,6 @@ module.exports = [
 		  ]
 	  }
 	}
-]
+];
 
+module.exports = initialPartners;
