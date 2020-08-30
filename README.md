@@ -1,6 +1,6 @@
 ![ZeDelivery](assets/logo.png)
 
-<p align="center">The project is a geolocation API that aims to find the closest business partner to deliver the drink to the customer.</p>
+<p align="center">The project is a geolocation API that aims to find the nearest business partner to deliver the drink to the customer.</p>
 
 ## 💻 Technologies used
 - NodeJs in API (https://nodejs.org/en/).
