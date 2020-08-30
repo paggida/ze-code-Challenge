@@ -38,7 +38,11 @@ module.exports = {
   {
     await this.createConnection(dBUriObj);
 
-    populateDatabases();
+    const partnersDBSize = await partnerService.getAllPartners();
+
+    if(partnersDBSize.length===0){
+      populateDatabases();
+    }
   }
 };
 
