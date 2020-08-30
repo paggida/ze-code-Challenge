@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="ZeDelivery" src="https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2020/05/zedelivery.jpg" width="400px" />
+  <img alt="ZeDelivery" src="assets/logo.png"/>
 </h1>
 
 <p align="center">The project is a geolocation API that aims to find the closest business partner to deliver the drink to the customer.</p>
