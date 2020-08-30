@@ -15,6 +15,10 @@ module.exports = {
     const login = (user && psw)?`${user}:${psw}@`:'';
     return `mongodb://${login}${host}:${port}/${db}`
   },
+  isConnected()
+  {
+    return mongoose.connection.readyState = 1 || mongoose.connection.readyState = 2
+  },
   async createConnection(dBUriObj)
   {
     await mongoose.connect(this.getUri(dBUriObj), {
@@ -23,13 +27,9 @@ module.exports = {
       useFindAndModify: false
     })
   },
-  isConnected()
+  async endConnection()
   {
-    return mongoose.connection.readyState = 1 || mongoose.connection.readyState = 2
-  },
-  endConnection()
-  {
-    mongoose.connection.close();
+    await mongoose.connection.close();
   },
   async initializeDatabases(dBUriObj)
   {
