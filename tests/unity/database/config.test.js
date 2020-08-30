@@ -1,4 +1,4 @@
-const dbConfig = require('../../../../src/database/config');
+const dbConfig = require('../../../src/database/config');
 
 describe('Validation of the connection string object.', () => {
   it('Should be able to get a valid connection string object.', () => {
@@ -24,7 +24,7 @@ describe('Validation of the connection string (Uri).', () => {
       port: '27017',
       db: 'ZeDB'
     };
-    const uriString = PartnerService.getUri(dBUriObj);
+    const uriString = dbConfig.getUri(dBUriObj);
     expect(uriString).toBe('mongodb://zeUser:zePsw@localhost:27017/ZeDB');
   });
   it('Should not be able to add a user without a password in a connection string (Uri).', () => {
@@ -35,8 +35,8 @@ describe('Validation of the connection string (Uri).', () => {
       port: '27017',
       db: 'ZeDB'
     };
-    const uriString = PartnerService.getUri(dBUriObj);
-    expect(uriString).not.stringContaining('zeUser')
+    const uriString = dbConfig.getUri(dBUriObj);
+    expect(uriString).toBe('mongodb://localhost:27017/ZeDB');
   });
   it('Should not be able to add a password without a user in a connection string (Uri).', () => {
     const dBUriObj = {
@@ -46,8 +46,8 @@ describe('Validation of the connection string (Uri).', () => {
       port: '27017',
       db: 'ZeDB'
     };
-    const uriString = PartnerService.getUri(dBUriObj);
-    expect(uriString).not.stringContaining('zePsw')
+    const uriString = dbConfig.getUri(dBUriObj);
+    expect(uriString).toBe('mongodb://localhost:27017/ZeDB');
   });
 });
 
