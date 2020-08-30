@@ -1,28 +1,39 @@
 const mongoose = require('mongoose');
 
-const user             = '';
-const psw              = '';
-const host             = 'db_mongo_ze';
-const port             = '27017';
-const db               = 'ZeDB';
-
 module.exports = {
-  getUri()
+  getDBUriObj(){
+    return {
+      user: '',
+      psw: '',
+      host: 'localhost', //'db_mongo_ze'
+      port: '27017',
+      db: 'ZeDB'
+    }
+  },
+  getUri({ user, psw, host, port, db })
   {
     const login = (user && psw)?`${user}:${psw}@`:'';
     return `mongodb://${login}${host}:${port}/${db}`
   },
-  createConnection()
+  async createConnection(dBUriObj)
   {
-    mongoose.connect(this.getUri(), {
+    await mongoose.connect(this.getUri(dBUriObj), {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false
     })
   },
-  async initializeDatabases()
+  isConnected()
   {
-    this.createConnection();
+    return mongoose.connection.readyState = 1 || mongoose.connection.readyState = 2
+  },
+  endConnection()
+  {
+    mongoose.connection.close();
+  },
+  async initializeDatabases(dBUriObj)
+  {
+    await this.createConnection(dBUriObj);
     //TBD
   }
 }

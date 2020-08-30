@@ -20,7 +20,7 @@ class App {
 
   database()
   {
-    dbConfig.initializeDatabases();
+    dbConfig.initializeDatabases(dbConfig.getDBUriObj());
   }
   middlewares()
   {
