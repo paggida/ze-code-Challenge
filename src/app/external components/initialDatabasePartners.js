@@ -1,6 +1,6 @@
 const initialPartners = [
   {
-    id: 1,
+    id: '1',
     tradingName: 'Adega da Cerveja - Pinheiros',
     ownerName: 'Zé da Silva',
     document: '1432132123891/0001',
