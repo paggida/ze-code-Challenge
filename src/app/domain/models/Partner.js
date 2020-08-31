@@ -1,14 +1,14 @@
-const IGeoJSONPoint = require('./GeoJsonPoint');
-const IGeoJSONMultiPolygon = require('./GeoJsonMultiPolygon');
+const GeoJSONPoint = require('./GeoJsonPoint');
+const GeoJSONMultiPolygon = require('./GeoJsonMultiPolygon');
 
-const IPartnerModel = {
+const PartnerModel = {
   id: '',
   tradingName: '',
   ownerName: '',
   document: '',
-  coverageArea: IGeoJSONMultiPolygon,
-  address: IGeoJSONPoint,
+  coverageArea: GeoJSONMultiPolygon,
+  address: GeoJSONPoint,
   createdAt: ''
 }
 
-module.exports = IPartnerModel
+module.exports = PartnerModel

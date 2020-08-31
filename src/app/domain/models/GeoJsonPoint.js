@@ -1,6 +1,8 @@
-const IGeoJSONPoint = {
-	type: '',
-	coordinates: []
-}
+const GeoJSON = require('./GeoJson');
 
-module.exports = IGeoJSONPoint
+const GeoJSONPoint = Object.assign({}, GeoJSON);
+
+GeoJSONPoint.type= 'Point';
+GeoJSONPoint.coordinates= [];
+
+module.exports = GeoJSONPoint

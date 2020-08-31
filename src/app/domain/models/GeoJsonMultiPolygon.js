@@ -1,6 +1,8 @@
-const IGeoJSONMultiPolygon = {
-	type: '',
-	coordinates: [[[[]]]]
-}
+const GeoJSON = require('./GeoJson');
 
-module.exports = IGeoJSONMultiPolygon
+const GeoJSONMultiPolygon = Object.assign({}, GeoJSON);
+
+GeoJSONMultiPolygon.type= 'MultiPolygon';
+GeoJSONMultiPolygon.coordinates= [[[[]]]];
+
+module.exports = GeoJSONMultiPolygon
