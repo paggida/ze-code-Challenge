@@ -13,7 +13,7 @@ PartnerBLL.getAllPartners = async ()=>{
 }
 
 PartnerBLL.getPartnerById = async (partnerCode)=>{
-  const partner =await partnerDAL.getPartnerById(partnerCode);
+  const partner = await partnerDAL.getPartnerById(partnerCode);
 
   if(partner){
     return responseObjFunctional.getSuccessResponseObj(partner);
