@@ -6,9 +6,17 @@ module.exports = {
     return this.isValidLongitude(coordinates[0]) && this.isValidLatitude(coordinates[1])
   },
   isValidLongitude(longitude){
-    return longitude>=-180 && longitude<=180;
+    if(isNumber(longitude)){
+      return longitude>=-180 && longitude<=180;
+    }
+    return false;
   },
   isValidLatitude(latitude){
-    return latitude>=-90 && latitude<=90;
+    if(isNumber(longitude)){
+      return latitude>=-90 && latitude<=90;
+    }
+    return false;
   }
 }
+
+const isNumber = n => (/^-?[\d.]+(?:e-?\d+)?$/.test(n));
