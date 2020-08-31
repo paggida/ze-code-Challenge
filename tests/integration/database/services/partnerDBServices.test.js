@@ -33,26 +33,26 @@ describe('Validation of the flow to add a new partner.', () => {
   it('Should be able to add a valid new partner.', async () => {
     const newPartnerCode = await partnerDBServices.setNewPartner(testPartner);
 
-    expect(newPartnerCode.isSuccess).toBeTruthy();
-    expect(testPartner.id).toBe(newPartnerCode.id);
+    expect(newPartnerCode.code).toBe(200);
+    expect(testPartner.id).toBe(newPartnerCode.data.id);
   });
   it('Should not be able to add a new partner with an existing id.', async () => {
     const newPartnerCode = await partnerDBServices.setNewPartner({...testPartner, document: '1111111111111/1111'});
 
-    expect(newPartnerCode.isSuccess).toBeFalsy();
-    expect(newPartnerCode.message.indexOf("duplicate key")).toBeGreaterThanOrEqual(0);
+    expect(newPartnerCode.code).toBe(400);
+    expect(newPartnerCode.data.message.indexOf("duplicate key")).toBeGreaterThanOrEqual(0);
   });
   it('Should not be able to add a new partner with an existing document.', async () => {
     const newPartnerCode = await partnerDBServices.setNewPartner({...testPartner, id: '3b241101-e2bb-4255-8caf-4136c566a963'});
 
-    expect(newPartnerCode.isSuccess).toBeFalsy();
-    expect(newPartnerCode.message.indexOf("duplicate key")).toBeGreaterThanOrEqual(0);
+    expect(newPartnerCode.code).toBe(400);
+    expect(newPartnerCode.data.message.indexOf("duplicate key")).toBeGreaterThanOrEqual(0);
   });
 
   it('Should not be able to add a invalid new partner.', async () => {
     const newPartnerCode = await partnerDBServices.setNewPartner({});
 
-    expect(newPartnerCode.isSuccess).toBeFalsy();
+    expect(newPartnerCode.code).toBe(400);
   });
 });
 
