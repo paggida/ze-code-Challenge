@@ -1,5 +1,5 @@
 const Partner = require('../schemas/PartnerSchema');
-const IPartnerMethods = require('../../app/domain/contracts/Partner');
+const IPartnerMethods = require('../../app/domain/contracts/IPartnerMethods');
 
 const PartnerDBService = Object.assign({}, IPartnerMethods);
 

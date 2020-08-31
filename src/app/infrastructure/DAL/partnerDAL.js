@@ -1,4 +1,4 @@
-const IPartnerMethods = require('../../domain/contracts/Partner');
+const IPartnerMethods = require('../../domain/contracts/IPartnerMethods');
 const partnerDBService = require('../../../database/services/PartnerService');
 
 const PartnerDAL = Object.assign({}, IPartnerMethods);

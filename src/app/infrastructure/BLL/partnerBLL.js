@@ -1,4 +1,4 @@
-const IPartnerMethods = require('../../domain/contracts/Partner');
+const IPartnerMethods = require('../../domain/contracts/IPartnerMethods');
 const partnerDAL = require('../DAL/partnerDAL');
 const responseTreatment = require('../functional/responseTreatment');
 
