@@ -1,5 +1,5 @@
 const dbConfig = require('../../../src/database/config');
-const partnerService = require('../../../src/database/services/PartnerService');
+const partnerDBServices = require('../../../src/database/services/PartnerDBServices');
 const initialDatabasePartners = require('../../../src/app/external components/initialDatabasePartners');
 
 describe('Validation of the initial records in the database.', () => {
@@ -13,7 +13,7 @@ describe('Validation of the initial records in the database.', () => {
   });
 
   it('Should be able to initialize the database with initial records.', async () => {
-    const allPartners = await partnerService.getAllPartners();
+    const allPartners = await partnerDBServices.getAllPartners();
 
     expect(allPartners.length).toBeGreaterThanOrEqual(initialDatabasePartners.length);
   });

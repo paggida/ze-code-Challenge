@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const initialDatabasePartners = require('../app/external components/initialDatabasePartners');
-const partnerService = require('./services/PartnerService');
+const partnerDBServices = require('./services/PartnerDBServices');
 
 module.exports = {
   getDBUriObj(){
@@ -38,7 +38,7 @@ module.exports = {
   {
     await this.createConnection(dBUriObj);
 
-    const partnersDBSize = await partnerService.getAllPartners();
+    const partnersDBSize = await partnerDBServices.getAllPartners();
 
     if(partnersDBSize.length===0){
       populateDatabases();
@@ -48,6 +48,6 @@ module.exports = {
 
 function populateDatabases(){
   for(partner of initialDatabasePartners){
-    partnerService.setNewPartner(partner);
+    partnerDBServices.setNewPartner(partner);
   }
 }

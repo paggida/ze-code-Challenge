@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('../../../../../src/server');
 const dbConfig = require('../../../../../src/database/config');
-const partnerService = require('../../../../../src/database/services/PartnerService');
+const partnerDBServices = require('../../../../../src/database/services/PartnerDBServices');
 
 const dBUriObj = dbConfig.getDBUriObj();
 
@@ -26,11 +26,11 @@ const testPartner = {
 describe('Validation of the feature show() .', () => {
   beforeAll(async () => {
     await dbConfig.createConnection(dBUriObj);
-    await partnerService.setNewPartner(testPartner);
+    await partnerDBServices.setNewPartner(testPartner);
   });
 
   afterAll(async () => {
-    await partnerService.deletePartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
+    await partnerDBServices.deletePartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
     await dbConfig.endConnection();
   });
 

@@ -1,5 +1,5 @@
 const dbConfig = require('../../../../src/database/config');
-const partnerService = require('../../../../src/database/services/PartnerService');
+const partnerDBServices = require('../../../../src/database/services/PartnerDBServices');
 
 const dBUriObj = dbConfig.getDBUriObj();
 
@@ -31,26 +31,26 @@ describe('Validation of the flow to add a new partner.', () => {
   });
 
   it('Should be able to add a valid new partner.', async () => {
-    const newPartnerCode = await partnerService.setNewPartner(testPartner);
+    const newPartnerCode = await partnerDBServices.setNewPartner(testPartner);
 
     expect(newPartnerCode.isSuccess).toBeTruthy();
     expect(testPartner.id).toBe(newPartnerCode.id);
   });
   it('Should not be able to add a new partner with an existing id.', async () => {
-    const newPartnerCode = await partnerService.setNewPartner({...testPartner, document: '1111111111111/1111'});
+    const newPartnerCode = await partnerDBServices.setNewPartner({...testPartner, document: '1111111111111/1111'});
 
     expect(newPartnerCode.isSuccess).toBeFalsy();
     expect(newPartnerCode.message.indexOf("duplicate key")).toBeGreaterThanOrEqual(0);
   });
   it('Should not be able to add a new partner with an existing document.', async () => {
-    const newPartnerCode = await partnerService.setNewPartner({...testPartner, id: '3b241101-e2bb-4255-8caf-4136c566a963'});
+    const newPartnerCode = await partnerDBServices.setNewPartner({...testPartner, id: '3b241101-e2bb-4255-8caf-4136c566a963'});
 
     expect(newPartnerCode.isSuccess).toBeFalsy();
     expect(newPartnerCode.message.indexOf("duplicate key")).toBeGreaterThanOrEqual(0);
   });
 
   it('Should not be able to add a invalid new partner.', async () => {
-    const newPartnerCode = await partnerService.setNewPartner({});
+    const newPartnerCode = await partnerDBServices.setNewPartner({});
 
     expect(newPartnerCode.isSuccess).toBeFalsy();
   });
@@ -66,7 +66,7 @@ describe('Validation of the flow to find a specific partner.', () => {
   });
 
   it('Should be able to find an existing partner.', async () => {
-    const partner = await partnerService.getPartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
+    const partner = await partnerDBServices.getPartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
 
     expect(partner).toBeTruthy();
     expect(partner.id).toBe(testPartner.id);
@@ -74,7 +74,7 @@ describe('Validation of the flow to find a specific partner.', () => {
     expect(partner.document).toBe(testPartner.document);
   });
   it('Should not be able to return an unknown partner id.', async () => {
-    const partner = await partnerService.getPartnerById('99999999-9999-9999-9999-999999999999');
+    const partner = await partnerDBServices.getPartnerById('99999999-9999-9999-9999-999999999999');
 
     expect(partner).toBeFalsy();
   });
@@ -90,9 +90,9 @@ describe('Validation of the flow to delete a specific partner.', () => {
   });
 
   it('Should be able to delete an existing partner.', async () => {
-    const beforeDeletePartner = await partnerService.getPartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
-    await partnerService.deletePartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
-    const afterDeletePartner = await partnerService.getPartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
+    const beforeDeletePartner = await partnerDBServices.getPartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
+    await partnerDBServices.deletePartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
+    const afterDeletePartner = await partnerDBServices.getPartnerById('3b241101-e2bb-4255-8caf-4136c566a962');
 
     expect(beforeDeletePartner.id).toBe(testPartner.id);
     expect(beforeDeletePartner).toBeTruthy();

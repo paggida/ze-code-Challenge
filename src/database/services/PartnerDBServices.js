@@ -1,9 +1,9 @@
 const Partner = require('../schemas/PartnerSchema');
 const IPartnerMethods = require('../../app/domain/contracts/IPartnerMethods');
 
-const PartnerDBService = Object.assign({}, IPartnerMethods);
+const PartnerDBServices = Object.assign({}, IPartnerMethods);
 
-PartnerDBService.setNewPartner = async (partnerObj)=>{
+PartnerDBServices.setNewPartner = async (partnerObj)=>{
   try{
       const dbResponse = await Partner.create(partnerObj);
       return { isSuccess:true, id: dbResponse.id };
@@ -12,19 +12,19 @@ PartnerDBService.setNewPartner = async (partnerObj)=>{
   }
 };
 
-PartnerDBService.getAllPartners = async ()=>{
+PartnerDBServices.getAllPartners = async ()=>{
   return await Partner.find();
 };
 
-PartnerDBService.getPartnerById = async (partnerCode)=>{
+PartnerDBServices.getPartnerById = async (partnerCode)=>{
   const partner = await Partner.find({ id: partnerCode });
   return partner.length>0?partner[0]: undefined;
 };
 
-PartnerDBService.deletePartnerById = async (partnerCode)=>{
+PartnerDBServices.deletePartnerById = async (partnerCode)=>{
   await Partner.findOneAndDelete({ id: partnerCode });
 };
 
 getErrorObj = ({ message }) => ({ isSuccess:false, message: message });
 
-module.exports = PartnerDBService;
+module.exports = PartnerDBServices;
