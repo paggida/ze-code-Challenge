@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const GeoJsonPointSchema =  require('./GeoJsonPointSchema');
+const GeoJsonMultiPolygonSchema = require('./GeoJsonMultiPolygonSchema');
 
 const PartnerSchema = new mongoose.Schema({
   id: {
@@ -23,28 +25,8 @@ const PartnerSchema = new mongoose.Schema({
     trim: true,
     unique: true
   },
-  coverageArea:{
-    type: {
-      type: String,
-      enum: ['MultiPolygon'],
-      required: true
-    },
-    coordinates: {
-      type: [[[[Number]]]],
-      required: true
-    }
-  },
-  address: {
-    type: {
-      type: String,
-      enum: ['Point'],
-      required: true
-    },
-    coordinates: {
-      type: [Number],
-      required: true
-    }
-  },
+  coverageArea: GeoJsonMultiPolygonSchema,
+  address: GeoJsonPointSchema,
   createdAt: {
     type: Date,
     default: Date.now
