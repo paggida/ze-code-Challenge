@@ -1,22 +1,22 @@
 const IPartnerMethods = require('../../domain/contracts/Partner');
-const PartnerDBService = require('../../../database/services/PartnerService');
+const partnerDBService = require('../../../database/services/PartnerService');
 
 const PartnerDAL = Object.assign({}, IPartnerMethods);
 
 PartnerDAL.setNewPartner = async (partnerObj)=>{
-  return await PartnerDBService.setNewPartner(partnerObj);
+  return await partnerDBService.setNewPartner(partnerObj);
 }
 
 PartnerDAL.getAllPartners = async ()=>{
-  return await PartnerDBService.getAllPartners();
+  return await partnerDBService.getAllPartners();
 }
 
 PartnerDAL.getPartnerById = async (partnerCode)=>{
-  return await PartnerDBService.getPartnerById(partnerCode);
+  return await partnerDBService.getPartnerById(partnerCode);
 }
 
 PartnerDAL.deletePartnerById = async (partnerCode)=>{
-  return await PartnerDBService.deletePartnerById(partnerCode);
+  return await partnerDBService.deletePartnerById(partnerCode);
 }
 
 module.exports = PartnerDAL;

@@ -1,19 +1,19 @@
 const IPartnerMethods = require('../../domain/contracts/Partner');
-const PartnerDAL = require('../DAL/partnerDAL');
+const partnerDAL = require('../DAL/partnerDAL');
 const responseTreatment = require('../functional/responseTreatment');
 
 const PartnerBLL = Object.assign({}, IPartnerMethods);
 
 PartnerBLL.setNewPartner = async (partnerObj)=>{
-  return await PartnerDAL.setNewPartner(partnerObj);
+  return await partnerDAL.setNewPartner(partnerObj);
 }
 
 PartnerBLL.getAllPartners = async ()=>{
-  return await PartnerDAL.getAllPartners();
+  return await partnerDAL.getAllPartners();
 }
 
 PartnerBLL.getPartnerById = async (partnerCode)=>{
-  const partner =await PartnerDAL.getPartnerById(partnerCode);
+  const partner =await partnerDAL.getPartnerById(partnerCode);
 
   if(partner){
     return responseTreatment.getSuccessResponseObj(partner);
@@ -23,7 +23,7 @@ PartnerBLL.getPartnerById = async (partnerCode)=>{
 }
 
 PartnerBLL.deletePartnerById = async (partnerCode)=>{
-  return await PartnerDAL.deletePartnerById(partnerCode);
+  return await partnerDAL.deletePartnerById(partnerCode);
 }
 
 module.exports = PartnerBLL;
