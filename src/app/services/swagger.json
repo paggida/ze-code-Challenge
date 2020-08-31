@@ -34,7 +34,7 @@
             }
           },
           "404": {
-            "description": "Action canceled! Partner not found",
+            "description": "Partner not found",
             "schema": {
               "$ref": "#/definitions/Error"
             }
@@ -71,8 +71,14 @@
               "$ref": "#/definitions/Partner"
             }
           },
+          "400": {
+            "description": "Incorrect coordinates.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
           "404": {
-            "description": "Action canceled! No partner found",
+            "description": "No near partners.",
             "schema": {
               "$ref": "#/definitions/Error"
             }
