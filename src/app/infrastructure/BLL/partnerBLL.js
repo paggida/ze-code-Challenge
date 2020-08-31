@@ -1,6 +1,6 @@
 const IPartnerMethods = require('../../domain/contracts/IPartnerMethods');
 const partnerDAL = require('../DAL/partnerDAL');
-const responseTreatment = require('../functional/responseTreatment');
+const responseObjFunctional = require('../functional/responseObjFunctional');
 
 const PartnerBLL = Object.assign({}, IPartnerMethods);
 
@@ -16,9 +16,9 @@ PartnerBLL.getPartnerById = async (partnerCode)=>{
   const partner =await partnerDAL.getPartnerById(partnerCode);
 
   if(partner){
-    return responseTreatment.getSuccessResponseObj(partner);
+    return responseObjFunctional.getSuccessResponseObj(partner);
   }else{
-    return responseTreatment.getFailedResponseObj(404, 'Partner not found.');
+    return responseObjFunctional.getFailedResponseObj(404, 'Partner not found.');
   }
 }
 
