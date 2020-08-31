@@ -28,8 +28,8 @@ PartnerDBServices.getAllPartners = async ()=>{
 };
 
 PartnerDBServices.getPartnerById = async (partnerCode)=>{
-  const partner = await Partner.find({ id: partnerCode });
-  return partner.length>0?partner[0]: undefined;
+  const partner = await Partner.findOne({ id: partnerCode });
+  return partner;
 };
 
 PartnerDBServices.deletePartnerById = async (partnerCode)=>{
