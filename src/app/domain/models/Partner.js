@@ -1,12 +1,5 @@
-const IGeoJSONPoint = {
-	type: '',
-	coordinates: []
-}
-
-const IGeoJSONMultiPolygon = {
-	type: '',
-	coordinates: [[[[]]]]
-}
+const IGeoJSONPoint = require('./GeoJsonPoint');
+const IGeoJSONMultiPolygon = require('./GeoJsonMultiPolygon');
 
 const IPartnerModel = {
   id: '',
