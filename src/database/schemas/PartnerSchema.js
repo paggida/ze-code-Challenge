@@ -33,4 +33,6 @@ const PartnerSchema = new mongoose.Schema({
   }
 })
 
+PartnerSchema.index({address: '2dsphere'});
+
 module.exports = mongoose.model('Partner', PartnerSchema)
