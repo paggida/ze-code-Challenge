@@ -24,10 +24,14 @@ It'll be responsible for the commands to start the application. You can choose y
 - Yarn (https://classic.yarnpkg.com/en/docs/install)
 
 ## 👨‍💻 Running the application
-Start the docker service installed in your environment, after completing, depending on which package manager you chose, run the respective command below inside the application's root folder.
+Start the docker service installed in your environment, after completing, depending on which package manager you chose, run both respective commands below inside the application's root folder.
+
+    yarn
 
     yarn start-docker
 or
+
+    npm install
 
     npm run start-docker
 
