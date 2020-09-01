@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon",
+    "start": "nodemon src/index.js",
     "start-docker": "docker-compose up",
     "test": "jest",
     "test-docker": "docker exec -it ze_code_prj yarn test"
