@@ -1,5 +1,5 @@
 const IGeoJsonMethods = {
-  nearestPartner: (coordinates) =>{}
+  nearestPartner: coordinates => {}
 }
 
 module.exports = IGeoJsonMethods

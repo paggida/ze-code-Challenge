@@ -4,15 +4,15 @@ const responseObjFunctional = require('../functional/responseObjFunctional');
 
 const PartnerBLL = Object.assign({}, IPartnerMethods);
 
-PartnerBLL.setNewPartner = async (partnerObj)=>{
+PartnerBLL.setNewPartner = async partnerObj => {
   return await partnerDAL.setNewPartner(partnerObj);
 }
 
-PartnerBLL.getAllPartners = async ()=>{
+PartnerBLL.getAllPartners = async () => {
   return await partnerDAL.getAllPartners();
 }
 
-PartnerBLL.getPartnerById = async (partnerCode)=>{
+PartnerBLL.getPartnerById = async  partnerCode => {
   const partner = await partnerDAL.getPartnerById(partnerCode);
 
   if(partner){
@@ -22,7 +22,7 @@ PartnerBLL.getPartnerById = async (partnerCode)=>{
   }
 }
 
-PartnerBLL.deletePartnerById = async (partnerCode)=>{
+PartnerBLL.deletePartnerById = async partnerCode => {
   return await partnerDAL.deletePartnerById(partnerCode);
 }
 
