@@ -12,7 +12,7 @@ module.exports = {
     return false;
   },
   isValidLatitude(latitude){
-    if(isNumber(longitude)){
+    if(isNumber(latitude)){
       return latitude>=-90 && latitude<=90;
     }
     return false;
